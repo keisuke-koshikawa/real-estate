@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RealEstateService } from './services/real-estate.service';
+import { RealEstateFilter } from './models/state';
+import { RealEstateListUsecase } from './usecase/real-estate-list.usecase';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +8,18 @@ import { RealEstateService } from './services/real-estate.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  realEstates = this.realEstateService.realEstates$;
+  realEstates$ = this.realEstateList.realEstates$;
+  realEstateListFilter$ = this.realEstateList.filter$;
 
   constructor(
-    private realEstateService: RealEstateService
+    private realEstateList: RealEstateListUsecase
   ) {}
 
   ngOnInit() {
-    this.realEstateService.fetchRealEstates()
+    this.realEstateList.fetchRealEstates()
+  }
+
+  setRealEstateListFilter(value: RealEstateFilter) {
+    this.realEstateList.setTradePriceFilter(value.tradePriceFilter);
   }
 }

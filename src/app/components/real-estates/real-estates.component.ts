@@ -11,5 +11,6 @@ export class RealEstatesComponent {
   @Input()
   realEstates!: RealEstate[] | null;
 
-  constructor() { }
+  constructor() {
+  }
 }
