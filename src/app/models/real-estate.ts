@@ -5,7 +5,7 @@ export interface RealEstate {
   Prefecture?: string; // 都道府県名
   Municipality?: string; // 市区町村名
   DistrictName?: string; // 地区名
-  TradePrice?: string; // 取引価格（総額）
+  TradePrice: string; // 取引価格（総額）
   PricePerUnit?: string; // 坪単価
   FloorPlan?: string // 間取り
   Area?: string; // 面積（平方メートル）

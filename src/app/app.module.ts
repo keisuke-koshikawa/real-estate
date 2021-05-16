@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RealEstatesComponent } from './components/real-estates/real-estates.component';
 import { RealEstateItemComponent } from './components/real-estate-item/real-estate-item.component';
 
@@ -52,19 +53,22 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { RealEstateListFilterComponent } from './components/real-estate-list-filter/real-estate-list-filter.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RealEstatesComponent,
-    RealEstateItemComponent
+    RealEstateItemComponent,
+    RealEstateListFilterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     A11yModule,
     ClipboardModule,
     CdkStepperModule,

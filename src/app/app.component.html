@@ -14,4 +14,9 @@
       </mat-list-item> -->
     </mat-nav-list>
   </mat-sidenav>
-<app-real-estates [realEstates]="realEstates | async"></app-real-estates>
+
+<app-real-estate-list-filter
+  [value]="realEstateListFilter$ | async"
+  (valueChange)="setRealEstateListFilter($event)">
+</app-real-estate-list-filter>
+<app-real-estates [realEstates]="realEstates$ | async"></app-real-estates>
